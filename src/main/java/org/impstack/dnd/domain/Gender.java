@@ -1,4 +1,4 @@
-package org.impstack.dnd.model;
+package org.impstack.dnd.domain;
 
 /**
  * @author remy
