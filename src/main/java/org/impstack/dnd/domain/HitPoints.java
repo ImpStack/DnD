@@ -12,6 +12,10 @@ public class HitPoints {
     public HitPoints() {
     }
 
+    public HitPoints(Integer maxHitPoints) {
+        this(maxHitPoints, maxHitPoints);
+    }
+
     public HitPoints(Integer currentHitPoints, Integer maxHitPoints) {
         this.currentHitPoints = currentHitPoints;
         this.maxHitPoints = maxHitPoints;

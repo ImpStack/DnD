@@ -12,6 +12,10 @@ public class ManaPoints {
     public ManaPoints() {
     }
 
+    public ManaPoints(Integer maxManaPoints) {
+        this(maxManaPoints, maxManaPoints);
+    }
+
     public ManaPoints(Integer currentManaPoints, Integer maxManaPoints) {
         this.currentManaPoints = currentManaPoints;
         this.maxManaPoints = maxManaPoints;
