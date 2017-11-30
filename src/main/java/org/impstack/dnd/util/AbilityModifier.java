@@ -47,7 +47,7 @@ public class AbilityModifier {
     private AbilityModifier() {
     }
 
-    public void setModifiers(Map<Integer, Integer> modifiers) {
+    public static void setModifiers(Map<Integer, Integer> modifiers) {
         AbilityModifier.modifiers = modifiers;
     }
 
