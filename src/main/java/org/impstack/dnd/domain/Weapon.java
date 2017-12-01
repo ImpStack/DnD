@@ -17,17 +17,19 @@ public class Weapon {
     private Die.Type damage;
     private DamageType damageType;
     private float weight;
+    private WeaponType type;
     private Set<WeaponProperty> properties;
 
     public Weapon() {
     }
 
-    public Weapon(String name, Integer copperCoins, Die.Type damage, DamageType damageType, float weight, Set<WeaponProperty> properties) {
+    public Weapon(String name, Integer copperCoins, Die.Type damage, DamageType damageType, float weight, WeaponType type, Set<WeaponProperty> properties) {
         this.name = name;
         this.copperCoins = copperCoins;
         this.damage = damage;
         this.damageType = damageType;
         this.weight = weight;
+        this.type = type;
         this.properties = properties;
     }
 
@@ -76,6 +78,15 @@ public class Weapon {
         return this;
     }
 
+    public WeaponType getType() {
+        return type;
+    }
+
+    public Weapon setType(WeaponType type) {
+        this.type = type;
+        return this;
+    }
+
     public Set<WeaponProperty> getProperties() {
         return properties;
     }
@@ -98,7 +109,9 @@ public class Weapon {
                 ", damage=" + damage +
                 ", damageType=" + damageType +
                 ", weight=" + weight +
+                ", type=" + type +
                 ", properties=" + properties +
                 '}';
     }
+
 }
