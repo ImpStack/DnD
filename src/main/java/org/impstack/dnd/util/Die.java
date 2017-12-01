@@ -9,7 +9,8 @@ import java.util.Random;
 public class Die {
 
     public enum Type {
-        D20("1d20", 20);
+        D20("1d20", 20),
+        D6("1d6", 6);
 
         String name;
         int max;
