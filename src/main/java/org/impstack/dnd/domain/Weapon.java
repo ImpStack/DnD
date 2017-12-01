@@ -91,6 +91,14 @@ public class Weapon {
         return this;
     }
 
+    public boolean isRanged() {
+        return WeaponType.MARTIAL_RANGED == getType() || WeaponType.SIMPLE_RANGED == getType();
+    }
+
+    public boolean isMelee() {
+        return !isRanged();
+    }
+
     public Set<WeaponProperty> getProperties() {
         return properties;
     }
