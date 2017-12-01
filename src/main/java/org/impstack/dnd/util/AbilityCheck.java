@@ -1,12 +1,16 @@
 package org.impstack.dnd.util;
 
 import org.impstack.dnd.domain.Abilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author remy
  * @since 1/12/17.
  */
 public class AbilityCheck {
+
+    private static final Logger LOG = LoggerFactory.getLogger(AbilityCheck.class);
 
     private Die die;
 
@@ -47,6 +51,10 @@ public class AbilityCheck {
     }
 
     public int get(int ability) {
-        return die.roll(Die.Type.D20) + AbilityModifier.getModifier(ability);
+        int roll = die.roll(Die.Type.D20);
+        int modifier = AbilityModifier.getModifier(ability);
+        int total = roll + modifier;
+        LOG.trace("[Ability check: {} + {}]({}) + {} = {}", Die.Type.D20, modifier, roll, modifier, total);
+        return total;
     }
 }
