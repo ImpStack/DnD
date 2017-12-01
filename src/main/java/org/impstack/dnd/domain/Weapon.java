@@ -23,6 +23,10 @@ public class Weapon {
     public Weapon() {
     }
 
+    public Weapon(String name, Integer copperCoins, Die.Type damage, DamageType damageType, float weight, WeaponType type, WeaponProperty... properties) {
+        this(name, copperCoins, damage, damageType, weight, type, new HashSet<>(Arrays.asList(properties)));
+    }
+
     public Weapon(String name, Integer copperCoins, Die.Type damage, DamageType damageType, float weight, WeaponType type, Set<WeaponProperty> properties) {
         this.name = name;
         this.copperCoins = copperCoins;
