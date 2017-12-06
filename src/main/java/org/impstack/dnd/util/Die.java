@@ -10,7 +10,8 @@ public class Die {
 
     public enum Type {
         D20("1d20", 20),
-        D6("1d6", 6);
+        D6("1d6", 6),
+        D8("1d8", 8);
 
         String name;
         int max;
