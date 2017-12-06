@@ -39,6 +39,14 @@ public class HitPoints {
         return this;
     }
 
+    /**
+     * Returns the current hitpoints percentage.
+     * @return a value between [0-1] representing the hit points percentage
+     */
+    public float getPercentage() {
+        return (float) getCurrentHitPoints() / (float) getMaxHitPoints();
+    }
+
     @Override
     public String toString() {
         return "HitPoints{" +
