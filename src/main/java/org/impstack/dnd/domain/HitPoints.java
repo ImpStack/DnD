@@ -17,8 +17,8 @@ public class HitPoints {
     }
 
     public HitPoints(Integer currentHitPoints, Integer maxHitPoints) {
-        this.currentHitPoints = currentHitPoints;
-        this.maxHitPoints = maxHitPoints;
+        setCurrentHitPoints(currentHitPoints);
+        setMaxHitPoints(maxHitPoints);
     }
 
     public Integer getCurrentHitPoints() {
@@ -26,7 +26,7 @@ public class HitPoints {
     }
 
     public HitPoints setCurrentHitPoints(Integer currentHitPoints) {
-        this.currentHitPoints = currentHitPoints;
+        this.currentHitPoints = currentHitPoints < 0 ? 0 : currentHitPoints;
         return this;
     }
 
