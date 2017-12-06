@@ -27,34 +27,34 @@ public class AbilityCheck {
     }
 
     public int getStrength(Abilities abilities) {
-        return get(abilities.getStrength());
+        return get(abilities.getStrength(), "STR");
     }
 
     public int getDexterity(Abilities abilities) {
-        return get(abilities.getDexterity());
+        return get(abilities.getDexterity(), "DEX");
     }
 
     public int getConstitution(Abilities abilities) {
-        return get(abilities.getConstitution());
+        return get(abilities.getConstitution(), "CON");
     }
 
     public int getIntelligence(Abilities abilities) {
-        return get(abilities.getIntelligence());
+        return get(abilities.getIntelligence(), "INT");
     }
 
     public int getWisdom(Abilities abilities) {
-        return get(abilities.getWisdom());
+        return get(abilities.getWisdom(), "WIS");
     }
 
     public int getCharisma(Abilities abilities) {
-        return get(abilities.getCharisma());
+        return get(abilities.getCharisma(), "CHA");
     }
 
-    public int get(int ability) {
+    public int get(int value, String ability) {
         int roll = die.roll(Die.Type.D20);
-        int modifier = AbilityModifier.getModifier(ability);
+        int modifier = AbilityModifier.getModifier(value);
         int total = roll + modifier;
-        LOG.trace("[Ability check: {} + {}]({}) + {} = {}", Die.Type.D20, modifier, roll, modifier, total);
+        LOG.trace("[Ability ({}) check: {} + {}]({}) + {} = {}", ability, Die.Type.D20, modifier, roll, modifier, total);
         return total;
     }
 }
