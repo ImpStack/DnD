@@ -47,6 +47,13 @@ public class HitPoints {
         return (float) getCurrentHitPoints() / (float) getMaxHitPoints();
     }
 
+    /**
+     * @return true if the current hitpoints are lower then or equal to 0, false otherwise
+     */
+    public boolean isDeath() {
+        return 0 >= currentHitPoints;
+    }
+
     @Override
     public String toString() {
         return "HitPoints{" +
