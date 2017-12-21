@@ -20,10 +20,15 @@ public class HitPointsTest {
         Assert.assertEquals(new Integer(10), hitPoints.getMaxHitPoints());
         Assert.assertEquals(new Integer(5), hitPoints.getCurrentHitPoints());
         Assert.assertEquals(0.5, hitPoints.getPercentage(), 0);
+        Assert.assertFalse(hitPoints.isDeath());
         hitPoints.setCurrentHitPoints(-5);
         Assert.assertEquals(new Integer(10), hitPoints.getMaxHitPoints());
         Assert.assertEquals(new Integer(0), hitPoints.getCurrentHitPoints());
         Assert.assertEquals(0, hitPoints.getPercentage(), 0);
+        Assert.assertTrue(hitPoints.isDeath());
+        hitPoints = new HitPoints(20);
+        Assert.assertEquals(new Integer(12), hitPoints.removeHitPoints(8).getCurrentHitPoints());
+        Assert.assertEquals(new Integer(20), hitPoints.addHitPoints(10).getCurrentHitPoints());
     }
 
 }

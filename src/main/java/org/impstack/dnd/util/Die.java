@@ -1,5 +1,8 @@
 package org.impstack.dnd.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 
 /**
@@ -8,10 +11,13 @@ import java.util.Random;
  */
 public class Die {
 
+    private static final Logger LOG = LoggerFactory.getLogger(Die.class);
+
     public enum Type {
         D20("1d20", 20),
         D6("1d6", 6),
-        D8("1d8", 8);
+        D8("1d8", 8),
+        D100("1d100", 100);
 
         String name;
         int max;
@@ -46,7 +52,17 @@ public class Die {
     }
 
     public int roll(Type die) {
-        return random.nextInt(die.getMax()) + 1;
+        return roll(die, 1);
+    }
+
+    public int roll(Type die, int times) {
+        int total = 0;
+        for (int i = 0; i < times; i++) {
+            int roll = random.nextInt(die.getMax()) + 1;
+            total += roll;
+            LOG.debug("Roll {}: {}", die, roll);
+        }
+        return total;
     }
 
 }

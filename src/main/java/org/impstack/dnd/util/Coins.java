@@ -19,6 +19,10 @@ public class Coins {
         add(gold, copper);
     }
 
+    public Coins add(Coins coins) {
+        return add(coins.getGold(), coins.getCopper());
+    }
+
     public Coins add(int gold, int copper) {
         if (gold < 0 || copper < 0) {
             throw new IllegalArgumentException(String.format("Invalid currency specified: %d%s %d%s", gold, CURRENCY_GOLD, copper, CURRENCY_COPPER));
@@ -66,4 +70,11 @@ public class Coins {
         copper = totalCopper % 100;
     }
 
+    @Override
+    public String toString() {
+        return "Coins{" +
+                "gold=" + gold +
+                ", copper=" + copper +
+                '}';
+    }
 }

@@ -15,5 +15,8 @@ public class DieTest {
     public void roll() {
         int roll1D20 = die.roll(Die.Type.D20);
         Assert.assertTrue(roll1D20 >= 1 && roll1D20 <= 20);
+
+        int roll5D6 = die.roll(Die.Type.D6, 5);
+        Assert.assertTrue(roll5D6 >= 5 && roll5D6 <= 30);
     }
 }
